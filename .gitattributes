@@ -1,0 +1,13 @@
+# 统一换行，避免 Windows 检出时把二进制图纸模板改坏
+* text=auto
+
+# 二进制：SOLIDWORKS 图纸格式，绝不能被当文本转换
+*.slddrt binary
+*.sldprt binary
+*.sldasm binary
+*.slddrw binary
+
+# 脚本保持 CRLF（cmd.exe / PowerShell 对 LF-only 的批处理容易出怪问题）
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.bat text eol=crlf

@@ -1,0 +1,27 @@
+# 本机生成物：里面写死了这台机器的插件绝对路径
+packages/dsh-sw-drawing/cordis.patch.yml
+
+# 临时/调试
+_tmp/
+_bak/
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# SOLIDWORKS 文件不进仓库
+*.SLDPRT
+*.SLDASM
+*.SLDDRW
+*.DRWDOT
+*.slddrt
+!templates/*.slddrt
+
+# 截图/渲染产物
+*.bmp
+out/
+dist/

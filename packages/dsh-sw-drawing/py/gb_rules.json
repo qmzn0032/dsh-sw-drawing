@@ -1,0 +1,114 @@
+{
+  "$comment": "GB 制图规则表。代码只读这张表，不写死数值；改标准来这里改。",
+  "standard": "GB",
+  "version": "2026-11-20",
+
+  "projection": {
+    "default": "first_angle",
+    "allowed": ["first_angle"],
+    "$comment": "GB/T 4458.1 第一角投影。第三角不提供。"
+  },
+
+  "paper": {
+    "$comment": "GB/T 14689 基本幅面，单位 mm。c=装订边 25，e=其余边 5（A4 竖装）",
+    "A0": { "width": 1189, "height": 841 },
+    "A1": { "width": 841, "height": 594 },
+    "A2": { "width": 594, "height": 420 },
+    "A3": { "width": 420, "height": 297 },
+    "A4": { "width": 297, "height": 210 },
+    "margin": { "left": 25, "other": 5 }
+  },
+
+  "scale": {
+    "$comment": "GB/T 14690 优先比例序列，只能从这里选，不凑任意小数",
+    "enlarge": [[5, 1], [2, 1]],
+    "full": [[1, 1]],
+    "reduce": [[1, 2], [1, 5], [1, 10], [1, 20], [1, 50], [1, 100]],
+    "auto_order": [[1, 1], [1, 2], [1, 5], [2, 1], [5, 1], [1, 10], [1, 20], [1, 50], [1, 100]],
+    "$comment_auto": "auto_order 是自动选比例时的尝试顺序：先 1:1，再往小，再往大，再很小"
+  },
+
+  "line": {
+    "$comment": "GB/T 4457.4 图线。粗:细 = 2:1；粗实线优先 0.5 或 0.7",
+    "thick": [0.5, 0.7, 1.0],
+    "thin_ratio": 2,
+    "default_thick": 0.5
+  },
+
+  "text": {
+    "$comment": "GB/T 14691 长仿宋体，字高 mm，字高比 5:4",
+    "family": "长仿宋体",
+    "heights": [1.8, 2.5, 3.5, 5, 7, 10, 14, 20],
+    "ratio": 0.8
+  },
+
+  "dimension": {
+    "$comment": "GB/T 4458.4 尺寸注法",
+    "arrow": "filled",
+    "text_above_line": true,
+    "unit": "mm",
+    "prefix_diameter": "%%c",
+    "prefix_radius": "R",
+    "prefix_sphere": "S",
+    "count_prefix": "n×"
+  },
+
+  "untoleranced": {
+    "$comment": "GB/T 1804 线性与角度未注公差，默认 m 级（中等级）",
+    "grade": "m",
+    "linear_mm": [
+      { "range": [0.5, 3],   "tolerance": 0.1 },
+      { "range": [3, 6],     "tolerance": 0.1 },
+      { "range": [6, 30],    "tolerance": 0.2 },
+      { "range": [30, 120],  "tolerance": 0.3 },
+      { "range": [120, 400], "tolerance": 0.5 },
+      { "range": [400, 1000],"tolerance": 0.8 }
+    ],
+    "angular": "±0°30′",
+    "note": "未注线性公差按 GB/T 1804-m"
+  },
+
+  "geometric": {
+    "$comment": "GB/T 1182 符号；未注按 GB/T 1184-K",
+    "characteristics": [
+      "straightness", "flatness", "circularity", "cylindricity",
+      "line_profile", "surface_profile",
+      "parallelism", "perpendicularity", "angularity",
+      "position", "concentricity", "symmetry",
+      "circular_runout", "total_runout"
+    ],
+    "untoleranced_grade": "K"
+  },
+
+  "roughness": {
+    "$comment": "GB/T 131 / GB/T 1031 优先 Ra 值，μm",
+    "preferred_ra": [0.8, 1.6, 3.2, 6.3, 12.5, 25],
+    "symbol": "%%a"
+  },
+
+  "title_block": {
+    "$comment": "GB/T 10609.1 标题栏字段（顺序即填写顺序）",
+    "fields": [
+      "图样名称", "图样代号", "材料标记", "重量", "比例",
+      "设计", "审核", "工艺", "标准化", "批准", "日期",
+      "共 张", "第 张", "单位名称"
+    ],
+    "$comment_link": "字段值走零件自定义属性 + 图纸格式里的 $PRPSHEET 联动，不直接改标题栏文字"
+  },
+
+  "requirement_text": {
+    "$comment": "技术要求默认条目，生成后由人逐条确认/删改",
+    "defaults": [
+      "未注线性公差按 GB/T 1804-m。",
+      "未注角度公差按 GB/T 1804-m。",
+      "未注几何公差按 GB/T 1184-K。",
+      "未注表面粗糙度 Ra12.5。"
+    ]
+  },
+
+  "layout": {
+    "$comment": "视图排布。gap 为视图间距 mm；margin_bottom 给标题栏和分区号留位",
+    "gap": 20,
+    "usable_shrink": { "right": 18, "top": 10, "bottom": 12 }
+  }
+}

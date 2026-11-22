@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="SOLIDWORKS drawing views">
+  <rect width="48" height="48" rx="11" fill="#1f2937"/>
+  <!-- 三视图：前视 / 俯视 / 侧视 -->
+  <rect x="7" y="13" width="15" height="11" fill="none" stroke="#60a5fa" stroke-width="1.7"/>
+  <rect x="7" y="28" width="15" height="8" fill="none" stroke="#60a5fa" stroke-width="1.7"/>
+  <rect x="32" y="13" width="9" height="11" fill="none" stroke="#60a5fa" stroke-width="1.7"/>
+  <!-- 投影对齐线 -->
+  <path d="M22 13h10M22 24h10M22 28v8" stroke="#60a5fa" stroke-width="0.9" stroke-dasharray="2 2" opacity="0.7"/>
+  <!-- 尺寸线 -->
+  <path d="M7 33h-0" stroke="#f0b04c" stroke-width="0"/>
+  <path d="M7 20h-3M7 28h-3" stroke="#f0b04c" stroke-width="1.1"/>
+  <path d="M4 20v8" stroke="#f0b04c" stroke-width="1.1"/>
+  <circle cx="4" cy="20" r="1.2" fill="#f0b04c"/>
+  <circle cx="4" cy="28" r="1.2" fill="#f0b04c"/>
+</svg>

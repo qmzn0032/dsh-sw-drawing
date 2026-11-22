@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "SOLIDWORKS bridge",
+    "description": "Drives a running SOLIDWORKS 2024 over COM: inspect models, build features, set materials, generate GB drawings and export PDF. 17 sw_* tools; requires SOLIDWORKS already running and pywin32.",
+    "detail": "docs/DETAIL.md"
+  }
+}

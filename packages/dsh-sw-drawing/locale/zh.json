@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "SOLIDWORKS 桥接",
+    "description": "把 SOLIDWORKS 2024 接进 DSH：读模型、建模、改材料、出 GB 工程图、导 PDF，共 17 个 sw_* 工具。需要 SW 已在运行且本机装了 pywin32。",
+    "detail": "docs/DETAIL.md"
+  }
+}

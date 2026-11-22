@@ -1,0 +1,20 @@
+# Template for the DSH bundle patch. install.ps1 fills in the plugin path placeholder and writes
+# cordis.patch.yml next to this file. Do not install the bundle before running it.
+#
+# The MCP server is started through py\launch_server.cmd, which locates a Python 3
+# with pywin32 (SW_BRIDGE_PYTHON -> hermes venv -> py -3 -> python) and then runs
+# mcp_sw_server.py on stdio. That keeps the interpreter out of this file.
+- insert:
+    - id: sw-drawing-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: sw_bridge
+        transport: stdio
+        command: 'cmd'
+        args:
+          - '/c'
+          - '__PLUGIN_DIR__\py\launch_server.cmd'
+        env:
+          SW_BRIDGE_GUI_APPROVAL: '1'
+          PYTHONIOENCODING: 'utf-8'
+        failOnStartupError: true

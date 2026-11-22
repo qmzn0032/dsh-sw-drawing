@@ -1,0 +1,25 @@
+{
+  "name": "dsh-sw-drawing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SOLIDWORKS 2024 x DSH: the sw_bridge MCP server (modeling, GB drawings, export)",
+  "engines": {
+    "dsh": ">=0.2.0"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "py/*.py",
+    "py/gb_rules.json",
+    "py/launch_server.cmd",
+    "README.md",
+    "docs/*.md",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
